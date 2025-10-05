@@ -51,7 +51,7 @@ The robot then runs the path and shows:
    The repository uses **GitHub Actions CI/CD pipeline** that automatically:
    - ✅ Runs all Playwright tests on every push/PR
    - ✅ Validates TypeScript compilation
-   - ✅ Checks code linting (ESLint) 
+   - ✅ Checks code linting (ESLint)
    - ✅ Ensures code quality and prevents regressions
    - 🚀 Deploys to Vercel on successful builds
 
