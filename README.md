@@ -36,6 +36,26 @@ The robot then runs the path and shows:
 
    All tests should pass ✅ (17 total).
 
+4. **Run linting**
+
+   ```bash
+   npm run lint
+   ```
+
+5. **Live Demo & CI**
+
+   [![CI](https://github.com/lfgn84/RobotSimulator/actions/workflows/ci.yml/badge.svg)](https://github.com/lfgn84/RobotSimulator/actions/workflows/ci.yml)
+   
+   **Live URL:** https://robot-simulator-eta.vercel.app
+   
+   The repository uses **GitHub Actions CI/CD pipeline** that automatically:
+   - ✅ Runs all Playwright tests on every push/PR
+   - ✅ Validates TypeScript compilation
+   - ✅ Checks code linting (ESLint)
+   - ✅ Ensures code quality and prevents regressions
+   - 🚀 Deploys to Vercel on successful builds
+
+
 ---
 
 ## 🧩 Project Structure
