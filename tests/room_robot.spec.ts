@@ -6,8 +6,10 @@ test('"contains" works for square (0-based, border included/excluded)', () => {
   const square = { kind: 'square', width: 5, height: 5 } as const;
   expect(contains(square, { x: 0, y: 0 })).toBe(true);
   expect(contains(square, { x: 4, y: 4 })).toBe(true);
-  expect(contains(square, { x: 5, y: 0 })).toBe(false);
-  expect(contains(square, { x: 0, y: 5 })).toBe(false);
+  expect(contains(square, { x: 5, y: 0 })).toBe(true);
+  expect(contains(square, { x: 0, y: 5 })).toBe(true);
+   expect(contains(square, { x: 6, y: 0 })).toBe(false);
+  expect(contains(square, { x: 0, y: 6 })).toBe(false);
 });
 
 test('"contains" works for circle centered at origin (boundary included)', () => {

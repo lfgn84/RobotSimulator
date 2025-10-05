@@ -26,8 +26,8 @@ export default function RoomViz({
   if (room.kind === "square") {
     minX = 0;
     minY = 0;
-    maxX = room.width - 1;
-    maxY = room.height - 1;
+    maxX = room.width;
+    maxY = room.height;
   } else {
     isCircle = true;
     radius = room.radius;
@@ -39,10 +39,10 @@ export default function RoomViz({
 
   // layout
   const pad = 16;
-  const cellsX = maxX - minX + 1,
-    cellsY = maxY - minY + 1;
-  const w = cellsX * tile + pad * 2,
-    h = cellsY * tile + pad * 2;
+  const cellsX = maxX - minX;
+  const cellsY = maxY - minY;
+  const w = cellsX * tile + pad * 2;
+  const h = cellsY * tile + pad * 2;
 
   // mapping (screen)
   const sx = (x: number) => (x - minX) * tile + pad;
@@ -50,7 +50,7 @@ export default function RoomViz({
 
   // grid
   const gridLines: JSX.Element[] = [];
-  for (let x = minX; x <= maxX; x++)
+  for (let x = minX + 1; x <= maxX; x++)
     gridLines.push(
       <line
         key={`vx${x}`}
@@ -61,7 +61,7 @@ export default function RoomViz({
         stroke={COLORS.grid}
       />,
     );
-  for (let y = minY; y <= maxY; y++)
+  for (let y = minY + 1; y <= maxY; y++)
     gridLines.push(
       <line
         key={`hz${y}`}

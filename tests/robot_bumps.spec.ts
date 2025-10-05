@@ -10,7 +10,7 @@ test("robot bumps against the wall in a small square room", () => {
 
   // Now turn right and move inside the room
   const res2 = runRobot(room, { x: 0, y: 0 }, "en", "RFF", "N", { trace: true });
-  expect(formatResult(res2)).toMatch(/^1 0 Ö|^1 0 E/); // depending on language
+  expect(formatResult(res2)).toMatch(/^2 0 Ö|^2 0 E/); // depending on language
 });
 
 test("robot bumps when reaching border of a small circle", () => {
