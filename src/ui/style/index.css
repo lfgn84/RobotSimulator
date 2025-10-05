@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Tell Tailwind where to scan for class names (v4 way): */
+@source "../../**/*.{ts,tsx,html}";
+/* ---- Design tokens (Tailwind v4 @theme) ---- */
+@theme {
+  /* Brand palette from your screenshot */
+  --color-brand-purple: #3b0057;
+  --color-brand-yellow: #ffb503;
+  --color-brand-magenta: #8f2086;
+  --color-brand-sky: #24a6da;
+
+  /* Neutrals (just names for convenience) */
+  --color-ink: #0f172a; /* slate-900-ish */
+  --color-card: #ffffff;
+  --color-panel: #f8fafc;
+
+  /* Display font token for the title */
+  --font-display: "Nabla", system-ui;
+}
+
+/* Global background (image + subtle overlay) */
+body {
+  background:
+    radial-gradient(
+      1200px 600px at 80% 20%,
+      rgba(59, 0, 87, 0.1),
+      transparent 60%
+    ),
+    url("../../assets/potentionbackground.png") center/cover fixed no-repeat;
+}
+
+/* Optional: soften everything with a translucent canvas layer */
+.app-canvas {
+  @apply mx-auto max-w-6xl p-6;
+  background: color-mix(in srgb, var(--color-panel) 80%, transparent);
+  border-radius: 1rem;
+  backdrop-filter: saturate(110%) blur(1px);
+}
+
+/* Reusable card */
+.ui-card {
+  @apply rounded-2xl border border-slate-200 bg-white/90 shadow-sm;
+}
+
+/* Tag/pill */
+.pill {
+  @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium;
+}
+
+/* Display title */
+.title-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Small muted text */
+.muted {
+  @apply text-xs text-slate-500;
+}
