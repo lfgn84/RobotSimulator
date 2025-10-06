@@ -14,11 +14,27 @@ The robot then runs the path and shows:
 
 ## 🚀 How to Run
 
-1. **Install dependencies**
+## Requirements
+
+To run the project locally, ensure you have the following installed:
+
+- **Node.js**: v20 LTS or later  
+- **npm**: v9 or later (comes with Node 20)
+- **Modern browser**: Chrome, Edge, or Firefox (for UI preview and tests)
+
+---
+
+1. **Clone and Install dependencies**
+
+   git clone https://github.com/lfgn84/RobotSimulator.git
 
    ```bash
-   npm install
+   cd RobotSimulator
    ```
+
+      ```bash
+      npm install
+      ```
 
 2. **Start the app**
 
