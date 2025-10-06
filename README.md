@@ -34,7 +34,7 @@ The robot then runs the path and shows:
    npm run test
    ```
 
-   All tests should pass ✅ (17 total).
+   All tests should pass ✅ (19 total).
 
 4. **Run linting**
 

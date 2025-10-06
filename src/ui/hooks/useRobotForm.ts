@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { buildRoom } from "../../app/validators";
+import { buildRoom, validateStart } from "../../app/validators";
 import { APP, DEFAULTS } from "../../app/config";
 import { contains, type Room } from "../../core/room";
 import {
@@ -134,6 +134,17 @@ export function useRobotForm(): UseRobotFormState & UseRobotFormActions {
       setError("");
       const room = buildRoom(roomType, width, height, radius);
       const start = { x: startX, y: startY };
+
+      const startErr = validateStart(room, start);
+      if (startErr) {
+        setResult("");
+        setIgnored([]);
+        setBumps(0);
+        setPath([]);
+        setRoomSnapshot(null);
+        setError(startErr);
+        return;
+      }
 
       if (!contains(room, start)) {
         setResult("");
